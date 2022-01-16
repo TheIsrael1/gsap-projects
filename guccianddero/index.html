@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gucci & Dero</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,700,900&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="overlay first"></div>
+        <div class="overlay second"></div>
+        <div class="overlay third"></div>
+
+        <nav class="navbar">
+            <div class="menu">
+                <ion-icon name ="ios-menu"></ion-icon>
+            </div>
+            <div class="lang">eng</div>
+            <div class="search">
+                <ion-icon name="ios-search"></ion-icon>
+            </div>
+        </nav>
+
+        <div class="media">
+            <ul>
+                <li>facebook</li>
+                <li>instagram</li>
+                <li>twitter</li>
+            </ul>
+        </div>
+
+        <div class="text">
+            <h1>
+                <span class="hidetext">
+                    Toni&Guy
+                </span>
+            </h1>
+            <h2>duality</h2>
+            <h3>
+                <span class="hidetext">
+                    collection 2022 
+                    <br> duality
+                </span>
+                </h3>
+            <p>
+                <span class="hidetext">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia facere aliquam quo molestias nulla optio ea tempora laboriosam ad velit.
+                </span>
+            </p>
+        </div>
+
+        <div class="sponsor">
+            <img src="./images/sponsor-logo.png" alt="img">
+            <p>officail sponsor</p>
+        </div>
+
+        <div class="distortion"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+    integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+  <!-- three js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"
+    integrity="sha256-3mBEX8I0uMLF7+AUjJeTCelosuorzYpqwBMBPDTyQqY=" crossorigin="anonymous"></script>
+  <!-- hover-effect js -->
+  <script src="./hover-effect.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script>
+    new hoverEffect({
+        parent: document.querySelector('.distortion'),
+        intensity: 0.2,
+        image1: './images/01.png',
+        image2: './images/02.png',
+        displacementImage: './images/diss.png',
+        imagesRatio: 380 / 300
+    })
+
+    gsap.from('.navbar div', {duration: 1.5, delay: 1.5, y: '20', opacity: 0,  ease: "easeInOut", stagger: .08})
+    gsap.from('.media ul li', {duration: 1.5, delay: 1.5, x: '-20', opacity: 0,  ease: "easeInOut", stagger: .08})
+    gsap.from('.text h1 .hidetext', {duration: 1.5, delay: 1, y: '100%', ease: "easeInOut"})
+    gsap.from('.text h3 .hidetext', {duration: 1.5, delay: 1.2, y: '100%', ease: "easeInOut"})
+    gsap.from('.text p .hidetext', {duration: 1.5, delay: 1.3, y: '100%', ease: "easeInOut"})
+    gsap.from('.text h2', {duration: 1.5, delay: 1.5, opacity: 0, x: '-100%', ease: "power2.in"})
+    gsap.from('.sponsor img', {duration: 1.5, delay: 1.5, opacity: 0, y: '20', ease: "easeInOut"})
+    gsap.from('.sponsor p', {duration: 1.5, delay: 1.6, opacity: 0, y: '20', ease: "easeInOut"})
+    gsap.from('.distortion', {duration: 1.5, delay: 2, opacity: 0, y: '20', ease: "easeInOut"})
+    gsap.to('.first', {duration: 1.5, delay: .5, top: '-100%', ease: "easeInOut"})
+    gsap.to('.second', {duration: 1.5, delay: .7, top: '-100%', ease: "easeInOut"})
+    gsap.to('.third', {duration: 1.5, delay: .9, top: '-100%', ease: "easeInOut"})
+</script>
+</body>
+</html>
