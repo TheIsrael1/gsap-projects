@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool menu ish</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="cursor"></div>
+<div class="wrapper">
+    <div class="project-list">
+        <div class="project p-1">
+            <div class="project-title">
+                <h1>Motionland</h1>
+            </div>
+            <div class="project-categ">
+                Branding
+            </div>
+            <div class="project-overlay">
+            </div>
+        </div>
+        <div class="project p-2">
+            <div class="project-title">
+                <h1>Focus Reactive</h1>
+            </div>
+            <div class="project-categ">
+                Photogrphy
+            </div>
+            <div class="project-overlay">
+            </div>
+        </div>
+        <div class="project p-3">
+            <div class="project-title">
+                <h1>Aspect</h1>
+            </div>
+            <div class="project-categ">
+                Web Design
+            </div>
+            <div class="project-overlay">
+            </div>
+        </div>
+        <div class="project p-4">
+            <div class="project-title">
+                <h1>LogoMaker</h1>
+            </div>
+            <div class="project-categ">
+                Branding
+            </div>
+            <div class="project-overlay">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    gsap.from('.p-1', {
+            duration: 1.5,    
+            delay: 0.5,
+            x: "100vw",
+            ease: "easeInOut"
+        })
+        gsap.from('.p-2', {
+            duration: 1.5,    
+            delay: 0.5,
+            x: "-100vw",
+            ease: "easeInOut"
+        })
+        gsap.from('.p-3', {
+            duration: 1.5,    
+            delay: 0.5,
+            x: "100vw",
+            ease: "easeInOut"
+        })
+        gsap.from('.p-4', {
+            duration: 1.5,    
+            delay: 0.5,
+            x: "-100vw",
+            ease: "easeInOut"
+        })
+</script>
+<script>
+    let cursor = document.querySelector('.cursor')
+    let overlay = document.querySelectorAll('.project-overlay')
+    
+
+    const moveCircle = (e) =>{
+
+        gsap.to(cursor,{
+            duration: 0.5,
+            left: e.pageX,
+            top: e.pageY,
+            delay: 0.03
+        })
+    }
+
+    document.querySelector('.p-1').addEventListener('mouseover', ()=>{
+        cursor.style.backgroundImage = `url(./images/image-1.jpg)`
+    } )
+
+    document.querySelector('.p-2').addEventListener('mouseover', ()=>{
+        cursor.style.backgroundImage = `url(./images/image-2.jpg)`
+    } )
+    document.querySelector('.p-3').addEventListener('mouseover', ()=>{
+        cursor.style.backgroundImage = `url(./images/image-3.jpg)`
+    } )
+    document.querySelector('.p-4').addEventListener('mouseover', ()=>{
+        cursor.style.backgroundImage = `url(./images/image-4.jpg)`
+    } )
+
+    let flag = false;
+    overlay.forEach(o => {
+        o.addEventListener('mousemove', ()=>{
+        flag = true;
+        gsap.to(cursor, {
+            duration: 0.3,
+            scale: 1,
+            autoAlpha: 1,
+            ease: "easeInOut"
+        })
+        o.addEventListener("mousemove", moveCircle);
+        })
+    })
+
+    overlay.forEach(o=>{
+
+        o.addEventListener('mouseout', ()=>{
+            flag = false;
+            gsap.to(cursor, {
+                duration: 0.3,
+                scale: 0.1,
+                autoAlpha: 0,
+                ease: "easeInOut"
+            })
+        })
+    })
+    
+
+</script>
+</body>
+</html>
