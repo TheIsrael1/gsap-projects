@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="container">
+        <!-- <div class="container"> -->
             <div class="navbar">
                 <div class="navbar-container">
                     <div class="site-title">by dero</div>
@@ -22,7 +22,9 @@
 
             <div class="header">
                 <div class="header-container">
-                    <h1>Ehindero Israel <br /> Frontend <br /> &nbsp;Developer</h1>
+                    <h1 class="h1">Ehindero <br /> 
+                    <h1 class="h2">Frontend</h1>
+                    <h1 class="h3">UX Dev</h1>
                 </div>
             </div>
 
@@ -199,12 +201,26 @@
                 <div class="navbar">
                     <div class="navbar-container">
                         <div class="site-title">by dero</div>
-                        <div class="site-year">55.386656, 11.764279</div>
+                        <div class="site-year">with ❤️</div>
                     </div>
                 </div>
             </div>
             <br />
-        </div>
+        <!-- </div> -->
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const tl = gsap.timeline({duration: 1})
+        // document.onload(
+            tl
+            .from('.h3', {x: '-100vw', ease: 'easeInOut'})
+            .from('.h2', {x: '-100vw', ease: 'easeInOut'})
+            .from('.h1', {x: '-100vw', ease: 'easeInOut'})
+            .from('.hero-image', {y: '-200vh', ease: 'easeIn'})
+            // .to('.hero-image', {y: '-60vh'})
+
+
+        // )
+    </script>
 </body>
 </html>
